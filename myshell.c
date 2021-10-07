@@ -106,7 +106,7 @@ void executeCommand(char **str)
 		int result;
 
 		if (str[1] == NULL)
-			result = chdir("..");
+			result = chdir(getenv("HOME"));
 		else
 			result = chdir(str[1]);
 
@@ -173,7 +173,7 @@ void executeParallelCommands(char **str)
 			int result;
 
 			if (commands[1] == NULL)
-				result = chdir("..");
+				result = chdir(getenv("HOME"));
 			else
 				result = chdir(commands[1]);
 
